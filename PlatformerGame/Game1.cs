@@ -16,6 +16,8 @@ namespace PlatformerGame
         Texture2D platformTexture, playerTexture, spikeTexture;
 
         Finish finish;
+
+        bool gameOver;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -53,9 +55,13 @@ namespace PlatformerGame
 
             // TODO: Add your update logic here
 
-            player.Update(gameTime);
+            if (!gameOver)
+            {
 
-            CheckPlayerCollisions();
+                player.Update(gameTime);
+
+                CheckPlayerCollisions();
+            }
 
             base.Update(gameTime);
         }
@@ -65,21 +71,31 @@ namespace PlatformerGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
 
+
             spriteBatch.Begin();
 
-            foreach (Tiles platform in Platform.PlatformList)
+            if (gameOver)
             {
-                platform.Draw(spriteBatch);
+                spriteBatch.Draw(platformTexture, new Rectangle(0, 0, 1920, 1080), Color.Black);
             }
-            foreach (Tiles obstacle in Tiles.ObstacleList)
+            else
             {
-                obstacle.Draw(spriteBatch);
+
+                foreach (Tiles platform in Platform.PlatformList)
+                {
+                    platform.Draw(spriteBatch);
+                }
+                foreach (Tiles obstacle in Tiles.ObstacleList)
+                {
+                    obstacle.Draw(spriteBatch);
+                }
+
+                player.Draw(spriteBatch);
+
+                finish.Draw(spriteBatch);
+
+
             }
-
-            player.Draw(spriteBatch);
-
-            finish.Draw(spriteBatch);
-
             spriteBatch.End();
 
             // TODO: Add your drawing code here
@@ -122,6 +138,11 @@ namespace PlatformerGame
                     player.Death();
 
                 }
+            }
+
+            if (finish.HitBox.Intersects(player.HitBox))
+            {
+                gameOver = true;
             }
         }
 
