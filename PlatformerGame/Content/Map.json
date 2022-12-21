@@ -1,0 +1,85 @@
+{
+	"platform": [
+		{
+			"positionX": 0,
+			"positionY": 200,
+			"height": 100,
+			"width": 100
+		},
+		{
+			"positionX": 200,
+			"positionY": 200,
+			"height": 100,
+			"width": 100
+		},
+		{
+			"positionX": 400,
+			"positionY": 400,
+			"height": 50,
+			"width": 50
+		},
+		{
+			"positionX": 500,
+			"positionY": 500,
+			"height": 100,
+			"width": 100
+		},
+		{
+			"positionX": 500,
+			"positionY": 300,
+			"height": 100,
+			"width": 100
+		},
+		{
+			"positionX": 700,
+			"positionY": 900,
+			"height": 100,
+			"width": 100
+		},
+		{
+			"positionX": 200,
+			"positionY": 200,
+			"height": 100,
+			"width": 100
+		}
+	],
+	"floorSpike": [
+		{
+			"positionX": 800,
+			"positionY": 850,
+			"height": 50,
+			"width": 50
+		},
+		{
+			"positionX": 600,
+			"positionY": 0,
+			"height": 300,
+			"width": 50
+		},
+		{
+			"positionX": 0,
+			"positionY": 1000,
+			"height": 80,
+			"width": 1920
+		},
+		{
+			"positionX": 350,
+			"positionY": 875,
+			"height": 50,
+			"width": 50
+		}
+
+	],
+	"player": {
+		"positionX": 0,
+		"positionY": 0,
+		"height": 40,
+		"width": 40
+	},
+	"finish": {
+		"positionX": 300,
+		"positionY": 0,
+		"height": 1080,
+		"width": 10
+	}
+}
